@@ -37,6 +37,7 @@ class ConvNet(nn.Module):
 
         return x
 
+# Class commented out as evaluating improved model currently, to evaluate original model, uncomment this class and comment out the above class.
 # class ConvNet(nn.Module):
 #     def __init__(self) -> None:
 #         super(ConvNet, self).__init__()
@@ -72,7 +73,7 @@ test_loader = torch.utils.data.DataLoader(test_dataset, batch_size=batch_size, s
 model = torch.load("model_improved.pth").to( device)
 model.eval()
 
-# Model Eval
+# Model Eval, inside with loop as gradients do not need to be tracked - save time and space.
 with torch.no_grad():
     n_correct = 0
     n_samples = 0
@@ -100,6 +101,7 @@ with torch.no_grad():
                 n_class_false[pred] += 1
             n_class_samples[label] += 1
 
+    # Retrieving statistics for each class
     for i in range(10):
         acc[i] = n_class_correct[i] / n_class_samples[i]
         ppv[i] = n_class_correct[i] / (n_class_correct[i] + n_class_false[i])
