@@ -1,7 +1,7 @@
 # NeuralNetwork
 I created a convolutional neural network to categories images from the CIFAR10 dataset. This dataset contains over 60,000 images of 10 different types of object.
 
-There is a tutorials folder which shows the process I underwent to learn the techniques applied.
+In the repository there is a tutorials folder which shows the process I underwent to learn the techniques applied.
 
 In the CNN final product folder there is all the files required to train and evaluate the model including the model itself. I built an original model taking inspiration from posts online and then improved upon this model using methods I have researched.
 
